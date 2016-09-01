@@ -21,7 +21,7 @@ public class home extends Activity {
         super.onResume();
 
 
-//PRIMERO PREGUNTAMOS SI DESEA CONECTAR
+//PRIMERO PREGUNTAMOS SI DESEA CONECTar bm
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("¿Desea conectar el dispositivo ahora?")
                 .setTitle("Conexión")
