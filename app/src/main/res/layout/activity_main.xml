@@ -17,9 +17,14 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="INGRESAR"
+        android:text="@string/ingresar"
         android:id="@+id/btn_ingresar"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_alignParentStart="true" />
+
+
+
+
+
 </RelativeLayout>
