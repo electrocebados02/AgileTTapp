@@ -16,4 +16,91 @@
         android:layout_height="wrap_content"
         android:text="HOME"
         android:layout_gravity="center_horizontal" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:touchscreenBlocksFocus="true">
+
+
+            <Button
+                android:text="START"
+                android:id="@+id/btn_start"
+                android:layout_column="2" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APAGAR"
+                android:id="@+id/btn_apagar"
+                android:layout_column="3" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACCEDER"
+                android:id="@+id/btn_acceder"
+                android:layout_column="4" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="DESACTIVAR ALARMA"
+                android:id="@+id/btn_desactivar"
+                android:layout_column="0" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACTIVAR ALARMA"
+                android:id="@+id/btn_activar"
+                android:layout_column="1" />
+
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="BAUL"
+                android:id="@+id/btn_baul"
+                android:layout_column="0" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PARPADEAR ALTA"
+                android:id="@+id/btn_parpadearalta"
+                android:layout_column="1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LUZ ALTA"
+                android:id="@+id/btn_luzalta"
+                android:layout_column="2" />
+        </TableRow>
+    </TableLayout>
+
 </LinearLayout>
