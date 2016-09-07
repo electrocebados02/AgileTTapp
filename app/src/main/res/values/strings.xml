@@ -2,7 +2,7 @@
     <string name="app_name">AgileTT</string>
     <string name="ingresar">INGRESAR</string>
 
-    <string name="hello_world">Encendiendo un led</string>
+    <string name="hello_world">Bienvenidos a AgileTT</string>
     <string name="menu_settings">Opciones</string>
     <string name="title_activity_main">Led</string>
     <string name="bluetooth">Conectarse a</string>

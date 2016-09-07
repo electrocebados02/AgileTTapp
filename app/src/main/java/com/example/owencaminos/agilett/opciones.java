@@ -1,6 +1,7 @@
 package com.example.owencaminos.agilett;
 
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 /**
@@ -11,5 +12,8 @@ public class opciones extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.opciones);
+
+        //DEJAMOS LA PANTALLA VERTICAL...
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 }
