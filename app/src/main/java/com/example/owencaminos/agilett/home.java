@@ -86,32 +86,68 @@ public class home extends Activity {
         super.onResume();
 
 
-//PRIMERO PREGUNTAMOS SI DESEA CONECTAr todook
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("¿Desea conectar el dispositivo ahora?")
-                .setTitle("Conexión")
-                .setCancelable(false)
-                .setNegativeButton("No",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        })
-                .setPositiveButton("Conectar",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                               // TransferirDinero(); // metodo que se debe implementar
-                                if(D) Log.e("conexion", "conectandonos");
-                                vibrador = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-                                vibrador.vibrate(1000);
-                                String address = "20:16:06:06:17:44";//Direccion Mac del  rn42
-                                BluetoothDevice device = AdaptadorBT.getRemoteDevice(address);
-                                Servicio_BT.connect(device);
 
-                            }
-                        });
-        AlertDialog alert = builder.create();
-        alert.show();
+
+        // Obtenemos el adaptador de bluetooth
+        AdaptadorBT = BluetoothAdapter.getDefaultAdapter();
+        if (AdaptadorBT.isEnabled()) {//Si el BT esta encendido,
+
+
+
+
+
+        if (Servicio_BT.getState() == ConexionBT.STATE_CONNECTED) {//checa si estamos conectados a BT
+            Log.e(TAG, "opcion 1");
+           //MOSTRAMOS MENSAJE DE BIENVENIDA
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Por favor use los comandos con precaución!. El uso de este dispositivo es responsabilidad del usuario.")
+                    .setTitle("Bienvenido!")
+                    .setCancelable(false)
+                    .setNeutralButton("Aceptar",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+            //fin msj bienvenida
+        } else{
+            Log.e(TAG, "opcion 2");
+       //SI NO ESTAMOS CONECTADOS PREGUNTAMOS
+            //PRIMERO PREGUNTAMOS SI DESEA CONECTAr todook
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("¿Desea conectar el dispositivo ahora?")
+                    .setTitle("Conexión")
+                    .setCancelable(false)
+                    .setNegativeButton("No",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            })
+                    .setPositiveButton("Conectar",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // TransferirDinero(); // metodo que se debe implementar
+                                    if(D) Log.e("conexion", "conectandonos");
+                                    vibrador = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+                                    vibrador.vibrate(1000);
+                                    String address = "20:16:06:06:17:44";//Direccion Mac del  rn42
+                                    BluetoothDevice device = AdaptadorBT.getRemoteDevice(address);
+                                    Servicio_BT.connect(device);
+
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+            //FIN PREG
+
+        }
+
+        }
+
+
 
     }
 

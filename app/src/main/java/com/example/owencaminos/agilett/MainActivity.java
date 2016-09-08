@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final ToggleButton BotonLed = (ToggleButton)findViewById(R.id.Led1);
+        final ToggleButton BotonLed = (ToggleButton)findViewById(R.id.btn_paraltas);
         BotonLed.setOnClickListener(new View.OnClickListener() {
             public void onClick(View vv) {
 

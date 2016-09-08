@@ -42,13 +42,13 @@
 
 
         <ToggleButton
-            android:id="@+id/Led1"
             android:layout_width="100dp"
-            android:layout_height="278dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/vacio"
             android:textOff="@string/vacio"
-            android:textOn="@string/vacio" />
+            android:textOn="@string/vacio"
+            android:id="@+id/btn_paraltas" />
 
     </FrameLayout>
 
